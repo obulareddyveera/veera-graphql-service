@@ -1,5 +1,4 @@
 import { ApolloServer, gql } from "apollo-server-express";
-import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import http from "http";
 import express from "express";
 import cors from "cors";
@@ -27,7 +26,6 @@ const startApolloServer = async (app, httpServer) => {
     playground: true,
     introspection: true,
     context: (req, res) => ({req, res}),
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });
 
   await server.start();
