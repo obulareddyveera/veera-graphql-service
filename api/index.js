@@ -12,7 +12,7 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    hello: () => "World is veeras",
+    hello: () => "I am from localhost dev",
   },
 };
 
@@ -24,11 +24,14 @@ const startApolloServer = async (app, httpServer) => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
+    playground: true,
+    introspection: true,
+    context: (req, res) => ({req, res}),
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   });
 
   await server.start();
-  server.applyMiddleware({ app });
+  server.applyMiddleware({ app, path: '/api/graphql' });
 };
 
 startApolloServer(app, httpServer);
