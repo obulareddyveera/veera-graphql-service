@@ -1,18 +1,16 @@
 {
   "name": "veera-graphql-service",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "engines": {
-    "node": "20.x"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "repository": "git@github.com:obulareddyveera/veera-graphql-service.git",
+  "author": "vbreddyobulareddy <vbreddy.obulareddy@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.21.1"
+    "apollo-server-core": "^3.13.0",
+    "apollo-server-express": "^3.13.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "graphql": "^16.9.0"
   }
 }
